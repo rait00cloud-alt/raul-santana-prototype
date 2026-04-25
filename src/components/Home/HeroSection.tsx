@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[680px] w-full overflow-hidden text-white z-0">
+    <section className="relative h-[680px] sm:h-[780px] w-full overflow-hidden text-white z-0">
       {/* Background Video */}
       <video
         src="/videos/full-video.mp4"
