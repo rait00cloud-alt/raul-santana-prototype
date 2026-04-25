@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/Home/HeroSection';
+import ReleaseSection from '../components/Home/ReleaseSection';
+import CursosContainer from '../components/Home/CursosSection';
+import RaulServicesSection from '../components/Home/ServicesSection';
+import InteresseSection from '../components/Home/InteresseSection';
+---
+
+<Layout title="Raul Santana">
+	<HeroSection client:load />
+	<ReleaseSection client:load />
+	<RaulServicesSection client:load/>
+	<CursosContainer client:load />
+	<InteresseSection client:load />
+</Layout>

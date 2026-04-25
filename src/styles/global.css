@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'BasicCommercialRoman';
+    src: url('/fonts/BasicCommercialLT-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BasicCommercialLight';
+    src: url('/fonts/BasicCommercialLT-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BasicCommercialBold';
+    src: url('/fonts/BasicCommercialLT-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BasicCommercialBlack';
+    src: url('/fonts/BasicCommercialLT-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-scroll {
+  animation: logo-scroll 30s linear infinite;
+}
+
+@media (min-width: 1024px) {
+    .bg-custom-dj {
+        background-position-y: 0px !important;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
