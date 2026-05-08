@@ -28,7 +28,7 @@ const services = [
     description: 'A prevenção é um dos pilares da fisioterapia moderna. Muitas lesões musculares e articulares são resultado de sobrecargas repetitivas, déficits de mobilidade, instabilidade articular ou padrões de movimento inadequados.\n\nPor meio de avaliações funcionais detalhadas, são identificados fatores de risco que podem comprometer a performance e a integridade física.\n\nO trabalho preventivo envolve:',
     bullets: ['Correção de padrões de movimento', 'Melhora da mobilidade e estabilidade articular', 'Otimização da função muscular', 'Estratégias de recuperação e manutenção tecidual'],
     footer: 'Esse processo reduz significativamente o risco de lesões e promove longevidade esportiva e qualidade de vida.',
-    image: '/photos/atuacao/03.jpeg',
+    image: '/photos/lesoes.jpeg',
   },
 ];
 
