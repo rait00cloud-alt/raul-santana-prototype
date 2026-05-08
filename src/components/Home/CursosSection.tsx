@@ -20,8 +20,8 @@ export default function CursosContainer() {
       {/* Mobile Layout */}
       <div className="lg:hidden relative h-[580px] w-full">
        <img
-              src="/photos/10.jpg"
-              className="w-full h-full object-contain scale-120 object-[center_20%]"
+              src="/photos/raul-01.jpeg"
+              className="w-full h-full object-contain scale-110 object-[center_20%]"
           
         />
 
@@ -51,8 +51,8 @@ export default function CursosContainer() {
         <div className="flex flex-row items-stretch min-h-[640px] bg-black overflow-hidden">
           <div className="w-1/2 h-[640px] relative">
             <img
-              src="/photos/10.jpg"
-              className="w-full h-full object-cover"
+              src="/photos/raul-01.jpeg"
+              className="w-full h-full object-cover object-[center_20%]"
             />
           </div>
 
