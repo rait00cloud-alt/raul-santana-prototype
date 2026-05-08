@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="relative h-[680px] sm:h-[780px] w-full overflow-hidden text-white z-0">
       {/* Background Video */}
       <video
-        src="/videos/full-video.mp4"
+        src="/videos/full-video-v2.mp4"
         autoPlay
         muted
         loop
