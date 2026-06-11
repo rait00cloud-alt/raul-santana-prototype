@@ -28,15 +28,32 @@ function MaskText({ children, delay = 0, className }: { children: React.ReactNod
 
 export default function InteresseSection() {
   const [form, setForm] = useState({ nome: "", email: "", phone: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const textRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: textRef, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: form.nome, email: form.email }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ nome: "", email: "", phone: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -50,7 +67,7 @@ export default function InteresseSection() {
             Registre seu interesse
           </MaskText>
 
-          {sent ? (
+          {status === "sent" ? (
             <MaskText className="text-white/60 text-sm font-[BasicCommercialBold] tracking-tight">
               Recebemos seu contato.
             </MaskText>

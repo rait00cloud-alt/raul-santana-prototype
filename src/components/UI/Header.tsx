@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const MENU_ITEMS = [
   { label: "Sobre", path: "#sobre" },
-  { label: "Serviços", path: "#servicos" },
+  { label: "Serviços", path: "#servicos"},
   { label: "Missão", path: "#missao" },
   { label: "Contato", path: "#contato" },
 ];

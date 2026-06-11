@@ -1,0 +1,67 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"src": "^/_server-islands/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/_image/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/api/contact/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/contato/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/seguros/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/servicos/atendimento-brasileiros-exterior/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/servicos/avaliacao-psicologica-adulto/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/servicos/avaliacao-psicologica-infantil/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/servicos/orientacao-a-pais/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/servicos/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/sobre/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/termos-e-privacidade/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/$",
+			"dest": "_render"
+		}
+	]
+}
