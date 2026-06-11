@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { Check, X } from "lucide-react";
 
 const EASE = [0.33, 1, 0.68, 1] as const;
 
@@ -68,11 +69,19 @@ export default function InteresseSection() {
           </MaskText>
 
           {status === "sent" ? (
-            <MaskText className="text-white/60 text-sm font-[BasicCommercialBold] tracking-tight">
-              Recebemos seu contato.
-            </MaskText>
+            <div className="border border-green-500/50 bg-green-500/10 text-green-400 text-sm font-[BasicCommercialBold] tracking-tight uppercase p-4 text-center flex items-center justify-center gap-2">
+              <Check size={18} />
+              <span>Seu contato foi recebido com sucesso.</span>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+              {status === "error" && (
+                <div className="border border-red-500/50 bg-red-500/10 text-red-400 text-sm font-[BasicCommercialBold] tracking-tight uppercase p-4 text-center flex items-center justify-center gap-2">
+                  <X size={18} />
+                  <span>Erro ao enviar. Tente novamente.</span>
+                </div>
+              )}
+
               {fields.map((field, i) => (
                 <div key={field.id} className="flex flex-col gap-2">
                   <MaskText delay={0.05 + i * 0.06} className="text-white text-md font-[BasicCommercialBold] tracking-tight uppercase">
@@ -92,13 +101,14 @@ export default function InteresseSection() {
               <div className="overflow-hidden flex justify-center items-center w-full">
                 <motion.button
                   type="submit"
-                  className="text-white text-md tracking-tight uppercase font-[BasicCommercialBold] border-2 p-2 border-white hover:opacity-50 transition-opacity duration-300"
+                  disabled={status === "sending"}
+                  className="text-white text-md tracking-tight uppercase font-[BasicCommercialBold] border-2 p-2 border-white hover:opacity-50 transition-opacity duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
                   initial={{ y: "100%" }}
                   whileInView={{ y: 0 }}
                   viewport={{ once: false, margin: "-40px" }}
                   transition={{ delay: 0.3, duration: 0.55, ease: EASE }}
                 >
-                  Enviar
+                  {status === "sending" ? "Enviando..." : "Enviar"}
                 </motion.button>
               </div>
             </form>
